@@ -1,3 +1,5 @@
+
+
 * {
     box-sizing: border-box;
 }
@@ -5,6 +7,7 @@
 body {
     margin: 0;
     min-height: 100vh;
+    overflow-x: hidden;
     background: #f8fafc;
     color: #061735;
     font-family: "IBM Plex Sans Arabic", Tahoma, Arial, sans-serif;
@@ -27,15 +30,15 @@ img {
     display: block;
 }
 
+
+
 .sidebar {
-    position: fixed;
-    top: 0;
-    right: 0;
-    bottom: 0;
-    width: 236px;
-    padding: 20px 20px 28px;
+    position: static;
+    width: auto;
+    padding: 16px;
     background: #ffffff;
-    border-left: 1px solid #edf0f4;
+    border-left: 0;
+    border-bottom: 1px solid #edf0f4;
 }
 
 .sidebar-brand,
@@ -51,24 +54,24 @@ img {
 .sidebar-brand {
     flex-direction: row-reverse;
     justify-content: center;
-    gap: 12px;
-    margin-bottom: 34px;
+    gap: 10px;
+    margin-bottom: 20px;
     text-align: right;
 }
 
 .brand-logo {
     display: grid;
     place-items: center;
-    width: 56px;
-    height: 56px;
-    border-radius: 16px;
+    width: 44px;
+    height: 44px;
+    border-radius: 12px;
     background: linear-gradient(135deg, #2367ff, #4f2ee8);
     box-shadow: 0 10px 22px rgba(47, 75, 230, 0.28);
 }
 
 .brand-logo img {
-    width: 27px;
-    height: 27px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
     filter: brightness(0) invert(1);
 }
@@ -77,30 +80,32 @@ img {
 .top-brand h2 {
     margin: 0;
     color: #07152c;
-    font-size: 31px;
+    font-size: 24px;
     line-height: 1;
 }
 
 .sidebar-brand p,
 .top-brand p {
-    margin: 6px 0 0;
+    margin: 4px 0 0;
     color: #4b5d76;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .sidebar-nav {
     display: grid;
-    gap: 10px;
+    grid-template-columns: 1fr;
+    gap: 6px;
 }
 
 .sidebar-nav a {
     justify-content: flex-start;
-    gap: 14px;
-    height: 50px;
-    padding: 0 18px;
+    gap: 10px;
+    height: 44px;
+    padding: 0 14px;
     border-radius: 10px;
     color: #687386;
     font-weight: 800;
+    font-size: 13px;
 }
 
 .sidebar-nav a.active {
@@ -117,8 +122,8 @@ img {
 }
 
 .sidebar-nav img {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
     opacity: 0.78;
 }
@@ -128,13 +133,13 @@ img {
 }
 
 .quick-menu {
-    margin-top: 44px;
+    margin-top: 20px;
 }
 
 .quick-menu h2 {
-    margin: 0 0 22px;
+    margin: 0 0 14px;
     color: #475569;
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 500;
     text-align: center;
 }
@@ -142,58 +147,66 @@ img {
 .quick-menu button {
     width: 100%;
     justify-content: flex-start;
-    gap: 14px;
-    margin-bottom: 36px;
-    padding: 0 22px;
+    gap: 10px;
+    margin-bottom: 14px;
+    padding: 0 14px;
     background: transparent;
     color: #344258;
     text-align: right;
+    font-size: 13px;
 }
 
 .quick {
-    width: 40px;
-    height: 40px;
+    width: 36px;
+    height: 36px;
     border-radius: 9px;
 }
 
 .quick img {
-    width: 18px;
-    height: 18px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
 }
 
-.quick.blue { background: #e8f1ff; }
-.quick.green { background: #dcfce7; }
+.quick.blue   { background: #e8f1ff; }
+.quick.green  { background: #dcfce7; }
 .quick.purple { background: #f3e8ff; }
 .quick.orange { background: #ffeddc; }
 
+
 .dashboard {
     width: auto;
-    margin: 0 270px 0 34px;
-    padding: 22px 0 16px;
+    margin: 0;
+    padding: 8px;
 }
+
 
 .topbar {
     display: flex;
-    align-items: center;
-    justify-content: space-between;
-    min-height: 116px;
-    margin-bottom: 38px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 12px;
+    min-height: 0;
+    margin-bottom: 14px;
 }
 
 .top-brand {
     flex-direction: row-reverse;
-    gap: 14px;
+    justify-content: center;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
 }
 
 .online {
-    margin-right: 38px;
-    padding: 8px 15px;
+    margin-right: 0;
+    padding: 6px 12px;
     border-radius: 8px;
     background: #eafff2;
     border: 1px solid #c8f7d8;
     color: #00983a;
-    font-size: 13px;
+    font-size: 12px;
+    text-align: center;
 }
 
 .online::before {
@@ -207,12 +220,12 @@ img {
 }
 
 .top-tools {
-    gap: 10px;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .user-pill {
     gap: 10px;
-    min-width: 152px;
     padding: 8px 10px;
     border: 1px solid #dde3ea;
     border-radius: 10px;
@@ -221,15 +234,15 @@ img {
 }
 
 .user-pill img {
-    width: 41px;
-    height: 41px;
+    width: 36px;
+    height: 36px;
     border-radius: 50%;
     object-fit: cover;
 }
 
 .user-pill strong {
     display: block;
-    font-size: 13px;
+    font-size: 12px;
 }
 
 .user-pill small {
@@ -240,16 +253,16 @@ img {
     position: relative;
     display: grid;
     place-items: center;
-    width: 40px;
-    height: 40px;
+    width: 38px;
+    height: 38px;
     border: 1px solid #dde3ea;
     border-radius: 10px;
     background: #f9fbff;
 }
 
 .tool-button img {
-    width: 17px;
-    height: 17px;
+    width: 16px;
+    height: 16px;
     object-fit: contain;
 }
 
@@ -266,25 +279,27 @@ img {
     line-height: 17px;
 }
 
+
+
 .stats-layout {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 24px;
-    margin-bottom: 38px;
+    grid-template-columns: 1fr;
+    gap: 10px;
+    margin-bottom: 14px;
 }
 
 .stat-panel {
     position: relative;
-    min-height: 162px;
-    padding: 30px 32px;
+    min-height: 0;
+    padding: 20px;
 }
 
 .stat-icon {
     position: absolute;
-    top: 26px;
-    left: 28px;
-    width: 28px;
-    height: 28px;
+    top: 18px;
+    left: 18px;
+    width: 22px;
+    height: 22px;
     object-fit: contain;
     opacity: 0.18;
 }
@@ -292,111 +307,112 @@ img {
 .stat-panel span {
     display: block;
     color: #52637b;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .stat-panel strong {
     display: block;
-    margin-top: 12px;
+    margin-top: 6px;
     color: #020617;
-    font-size: 34px;
+    font-size: 24px;
     line-height: 1.15;
 }
 
 .stat-panel em {
     display: block;
-    margin-top: 10px;
-    font-size: 14px;
+    margin-top: 6px;
+    font-size: 12px;
     font-style: normal;
     font-weight: 800;
 }
 
-.top-layout,
-.bottom-layout {
-    display: grid;
-    gap: 16px;
-}
 
-.top-layout {
-    direction: ltr;
-    grid-template-columns: 2fr 0.98fr;
-    margin-bottom: 16px;
-}
-
-.top-layout > * {
-    direction: rtl;
-}
-
-.bottom-layout {
-    direction: ltr;
-    grid-template-columns: 1fr 1fr 1fr;
-}
-
-.bottom-layout > * {
-    direction: rtl;
-}
-
-.right-stack,
-.middle-stack {
-    display: grid;
-    gap: 16px;
-}
 
 .panel {
     background: #ffffff;
     border: 1px solid #dde3ea;
-    border-radius: 14px;
+    border-radius: 10px;
     box-shadow: 0 1px 3px rgba(15, 23, 42, 0.12);
-    padding: 24px;
+    padding: 14px;
 }
 
 .panel-header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    gap: 14px;
-    margin-bottom: 24px;
+    gap: 8px;
+    margin-bottom: 14px;
 }
 
 .panel-header h2 {
     margin: 0;
-    font-size: 18px;
+    font-size: 15px;
     font-weight: 800;
 }
 
 .panel-header a,
 .center-link {
-    font-size: 14px;
+    font-size: 12px;
 }
 
+
+
+.top-layout,
+.bottom-layout {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 10px;
+}
+
+.top-layout {
+    margin-bottom: 10px;
+}
+
+.right-stack,
+.middle-stack {
+    display: grid;
+    gap: 10px;
+}
+
+
+.top-layout > *,
+.bottom-layout > *,
+.right-stack > *,
+.middle-stack > * {
+    min-width: 0;
+}
+
+
+
 .transactions-panel {
-    padding-bottom: 18px;
+    padding-bottom: 12px;
 }
 
 .transactions-table {
     overflow-x: auto;
+    direction: rtl;
 }
 
 .table-row {
     display: grid;
-    grid-template-columns: minmax(230px, 1.8fr) 1fr 1.1fr 0.8fr 0.9fr;
+    grid-template-columns: minmax(180px, 1.8fr) 1fr 1.1fr 0.8fr 0.9fr;
     align-items: center;
-    min-width: 840px;
-    min-height: 73px;
+    min-width: 680px;
+    min-height: 58px;
     border-bottom: 1px solid #f0f2f5;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .table-head {
-    min-height: 40px;
+    min-height: 34px;
     color: #061735;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .transaction-name {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 8px;
 }
 
 .transaction-name strong,
@@ -405,7 +421,7 @@ img {
 .activity strong {
     display: block;
     color: #020617;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 small,
@@ -419,15 +435,15 @@ small,
 .bank-card p,
 .bank-card small {
     color: #465a77;
-    font-size: 12px;
+    font-size: 11px;
     font-style: normal;
 }
 
 .inline-icon {
     display: inline-block;
-    width: 12px;
-    height: 12px;
-    margin-right: 4px;
+    width: 11px;
+    height: 11px;
+    margin-right: 3px;
     object-fit: contain;
     vertical-align: -2px;
     opacity: 0.72;
@@ -435,8 +451,8 @@ small,
 
 .avatar,
 .round-icon {
-    width: 40px;
-    height: 40px;
+    width: 34px;
+    height: 34px;
     border-radius: 50%;
     flex: 0 0 auto;
 }
@@ -455,19 +471,20 @@ small,
 }
 
 .round-icon img {
-    width: 17px;
-    height: 17px;
+    width: 15px;
+    height: 15px;
     object-fit: contain;
 }
 
-.round-icon.orange { background: #ffedd5; }
-.round-icon.blue { background: #dbeafe; }
-.round-icon.violet { background: #e0e7ff; }
-.round-icon.red { background: #ffe1e6; }
-.round-icon.cyan { background: #cffafe; }
-.round-icon.green { background: #bbf7d0; }
-.round-icon.yellow { background: #fef3c7; }
-.round-icon.pink { background: #fce7f3; }
+.round-icon.orange  { background: #ffedd5; }
+.round-icon.blue    { background: #dbeafe; }
+.round-icon.violet  { background: #e0e7ff; }
+.round-icon.red     { background: #ffe1e6; }
+.round-icon.cyan    { background: #cffafe; }
+.round-icon.green   { background: #bbf7d0; }
+.round-icon.yellow  { background: #fef3c7; }
+.round-icon.pink    { background: #fce7f3; }
+
 
 .pill,
 .status {
@@ -475,9 +492,9 @@ small,
     align-items: center;
     justify-content: center;
     width: fit-content;
-    padding: 3px 11px;
+    padding: 2px 8px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 10px;
     font-weight: 700;
 }
 
@@ -519,7 +536,7 @@ small,
 
 .amount {
     color: #020617;
-    font-size: 14px;
+    font-size: 12px;
 }
 
 .positive {
@@ -530,19 +547,23 @@ small,
     color: #ff0000;
 }
 
+
+
 .activities-panel {
-    min-height: 363px;
+    min-height: auto;
 }
 
 .activity {
     position: relative;
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     align-items: start;
-    gap: 12px;
-    margin-bottom: 12px;
-    padding: 16px;
+    gap: 8px;
+    margin-bottom: 8px;
+    padding: 12px;
     border-radius: 8px;
+    overflow: hidden;
+    word-break: break-word;
 }
 
 .activity.blue-line {
@@ -556,66 +577,69 @@ small,
 }
 
 .activity p {
-    margin: 5px 0 12px;
+    margin: 4px 0 8px;
 }
 
 .activity em {
     color: #0b62ff;
-    font-size: 12px;
+    font-size: 11px;
     font-style: normal;
+    grid-column: 1 / -1;
 }
 
 .center-link {
     display: block;
-    margin-top: 16px;
-    padding-top: 20px;
+    margin-top: 12px;
+    padding-top: 14px;
     border-top: 1px solid #edf0f4;
     color: #0655ff;
     text-align: center;
 }
 
+
+
 .total-bills {
-    margin: 2px 0 16px;
+    margin: 2px 0 12px;
     text-align: center;
 }
 
 .total-bills strong {
     display: block;
     color: #061735;
-    font-size: 30px;
+    font-size: 22px;
     line-height: 1.1;
 }
 
 .total-bills span {
     color: #52637b;
-    font-size: 13px;
+    font-size: 11px;
 }
 
 .bill-grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
 }
 
 .bill-card {
     display: grid;
     justify-items: center;
     gap: 3px;
-    min-height: 120px;
-    padding: 13px 10px;
+    min-height: 90px;
+    padding: 10px 8px;
     border: 1px solid #edf0f4;
     border-radius: 10px;
     background: #f8fafc;
 }
 
 .bill-card .round-icon {
-    width: 32px;
-    height: 32px;
+    width: 28px;
+    height: 28px;
     border-radius: 8px;
 }
 
 .bill-card strong {
-    font-size: 16px;
+    font-size: 14px;
 }
 
 .bill-card em {
@@ -626,20 +650,20 @@ small,
     color: #00a83e;
 }
 
+
+
 .payment-panel {
     display: grid;
-    gap: 16px;
-    grid-template-rows: auto 192px 192px 192px;
+    gap: 12px;
+    grid-template-rows: auto 160px 160px 160px;
     align-content: start;
 }
 
-/* ═══════════════════════════════════════════
-   3D Flip Card System
-   ═══════════════════════════════════════════ */
+
 
 .flip-card {
     perspective: 1000px;
-    height: 192px;
+    height: 160px;
     cursor: pointer;
     position: relative;
     z-index: 0;
@@ -685,20 +709,18 @@ small,
     z-index: 1;
 }
 
-/* ─── Base Bank Card ─── */
+
 
 .bank-card {
     position: relative;
     height: 100%;
     overflow: hidden;
     border-radius: 10px;
-    padding: 28px;
+    padding: 18px;
     color: #ffffff;
     box-shadow: 0 10px 22px rgba(15, 23, 42, 0.14);
 }
 
-/* لازم القاعدة دي تفضل بعد .bank-card عشان تكسب في الـ specificity
-   وتمنع position:relative بتاعتها من إلغاء الـ absolute بتاع الفليب */
 .flip-card-front.bank-card,
 .flip-card-back.bank-card {
     position: absolute;
@@ -717,7 +739,7 @@ small,
     background: linear-gradient(135deg, #1a3199 0%, #2446bd 50%, #3a5fd9 100%);
 }
 
-/* ─── Card Back Faces ─── */
+
 
 .visa-card-back,
 .master-card-back,
@@ -725,27 +747,27 @@ small,
     background: linear-gradient(135deg, #0a0a0a 0%, #1a1a2e 50%, #16213e 100%);
 }
 
-/* ─── Magnetic Strip ─── */
+
 
 .card-magnetic-strip {
     position: absolute;
-    top: 22px;
+    top: 18px;
     left: 0;
     right: 0;
-    height: 42px;
+    height: 34px;
     background: linear-gradient(180deg, #1a1a1a 0%, #2a2a2a 40%, #1a1a1a 100%);
     box-shadow: 0 2px 6px rgba(0, 0, 0, 0.3);
 }
 
-/* ─── Signature Area ─── */
+
 
 .card-signature-area {
     position: absolute;
-    top: 84px;
-    left: 28px;
-    right: 28px;
-    height: 38px;
-    padding: 6px 14px;
+    top: 68px;
+    left: 18px;
+    right: 18px;
+    height: 30px;
+    padding: 4px 10px;
     border-radius: 4px;
     background: linear-gradient(90deg, #e9eef4, #f5f7fa);
     display: flex;
@@ -755,28 +777,28 @@ small,
 
 .card-signature-text {
     color: #374151;
-    font-size: 10px;
+    font-size: 8px;
     font-weight: 600;
     font-style: italic;
 }
 
 .card-last-digits {
     color: #111827;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 800;
     letter-spacing: 2px;
 }
 
-/* ─── CVV Area ─── */
+
 
 .card-cvv-area {
     position: absolute;
-    top: 136px;
-    right: 28px;
+    top: 112px;
+    right: 18px;
     display: flex;
     align-items: center;
-    gap: 10px;
-    padding: 6px 16px;
+    gap: 6px;
+    padding: 4px 10px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.15);
     backdrop-filter: blur(4px);
@@ -784,132 +806,131 @@ small,
 
 .card-cvv-area span {
     color: #ffffff;
-    font-size: 13px;
+    font-size: 11px;
     font-weight: 700;
 }
 
 .card-cvv-number {
-    font-size: 18px !important;
+    font-size: 14px !important;
     letter-spacing: 3px;
     font-weight: 900 !important;
 }
 
-/* ─── Card Back Logo ─── */
+
 
 .card-back-logo {
     position: absolute;
-    bottom: 18px;
-    left: 28px;
-    width: 40px;
-    height: 28px;
+    bottom: 12px;
+    left: 18px;
+    width: 32px;
+    height: 22px;
     object-fit: contain;
-    padding: 4px;
+    padding: 3px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.2);
     backdrop-filter: blur(4px);
 }
 
-/* ─── Front face elements ─── */
+
 
 .main-label {
     position: absolute;
-    top: 11px;
-    right: 13px;
-    padding: 7px 15px;
+    top: 8px;
+    right: 10px;
+    padding: 5px 10px;
     border-radius: 999px;
     background: rgba(255, 255, 255, 0.17);
-    font-size: 12px;
+    font-size: 10px;
+    z-index: 2;
 }
 
 .card-logo {
     position: absolute;
-    top: 42px;
-    right: 28px;
-    width: 38px;
-    height: 26px;
+    top: 32px;
+    right: 18px;
+    width: 30px;
+    height: 22px;
     object-fit: contain;
     z-index: 1;
 }
 
 .paypal-logo {
     position: absolute;
-    top: 40px;
-    right: 28px;
-    width: 34px;
-}
-
-.main-label {
-    z-index: 2;
+    top: 30px;
+    right: 18px;
+    width: 28px;
 }
 
 .bank-card i {
     position: absolute;
-    top: 28px;
-    left: 28px;
-    width: 48px;
-    height: 32px;
-    border-radius: 7px;
+    top: 20px;
+    left: 18px;
+    width: 40px;
+    height: 26px;
+    border-radius: 6px;
     background: rgba(255, 255, 255, 0.17);
 }
 
 .bank-card i::after {
     content: "";
     position: absolute;
-    inset: 8px 11px;
+    inset: 6px 9px;
     border-radius: 4px;
     background: rgba(255, 255, 255, 0.35);
 }
 
 .bank-card strong {
     display: block;
-    margin: 40px 0 26px;
-    font-size: 20px;
+    margin: 30px 0 16px;
+    font-size: 15px;
     letter-spacing: 0;
 }
 
 .paypal-card strong {
-    margin-top: 38px;
+    margin-top: 28px;
 }
 
 .bank-card p,
 .bank-card small {
     position: absolute;
-    bottom: 26px;
+    bottom: 18px;
     margin: 0;
     color: #ffffff;
 }
 
 .bank-card p {
-    left: 28px;
+    left: 18px;
     text-align: left;
 }
 
 .bank-card small {
-    right: 28px;
+    right: 18px;
 }
 
 .bank-card b {
     color: #ffffff;
-    font-size: 13px;
+    font-size: 11px;
 }
 
+
+
 .chart-panel {
-    min-height: 320px;
+    min-height: 240px;
 }
 
 .chart-legend {
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 12px;
+    gap: 8px;
     color: #52637b;
-    font-size: 12px;
+    font-size: 11px;
 }
 
 .green-box,
 .red-box {
-    width: 12px;
-    height: 12px;
+    width: 10px;
+    height: 10px;
     border-radius: 2px;
 }
 
@@ -925,22 +946,22 @@ small,
     display: grid;
     grid-template-columns: repeat(4, 1fr);
     align-items: end;
-    height: 200px;
-    padding: 36px 28px 12px;
+    height: 160px;
+    padding: 24px 4px 10px;
 }
 
 .bar-chart div {
     display: flex;
     align-items: end;
     justify-content: center;
-    gap: 12px;
+    gap: 6px;
     height: 100%;
     position: relative;
-    padding-bottom: 30px;
+    padding-bottom: 24px;
 }
 
 .bar-chart b {
-    width: 16px;
+    width: 12px;
     border-radius: 4px 4px 0 0;
 }
 
@@ -965,31 +986,36 @@ small,
     position: absolute;
     bottom: 0;
     color: #52637b;
-    font-size: 12px;
+    font-size: 10px;
 }
+
+
 
 .account-row {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 12px;
-    margin-bottom: 16px;
-    padding: 18px 16px;
+    gap: 8px;
+    margin-bottom: 10px;
+    padding: 12px 10px;
     border: 1px solid #edf0f4;
     border-radius: 10px;
     background: #f8fafc;
 }
 
 .account-row b {
-    font-size: 16px;
+    grid-column: 1 / -1;
+    font-size: 14px;
 }
+
+
 
 .budget-total {
     display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 8px 16px;
-    margin-bottom: 24px;
-    padding: 18px;
+    grid-template-columns: 1fr;
+    gap: 6px;
+    margin-bottom: 16px;
+    padding: 14px;
     border: 1px solid #cfe0ff;
     border-radius: 10px;
     background: #eff6ff;
@@ -998,7 +1024,7 @@ small,
 .budget-total strong {
     display: block;
     color: #183b90;
-    font-size: 24px;
+    font-size: 18px;
 }
 
 .budget-total p {
@@ -1007,7 +1033,7 @@ small,
 
 .budget-total em {
     color: #061735;
-    font-size: 12px;
+    font-size: 11px;
     font-style: normal;
     text-align: left;
 }
@@ -1018,26 +1044,27 @@ small,
 
 .budget-item {
     display: grid;
-    grid-template-columns: auto 1fr auto;
+    grid-template-columns: auto 1fr;
     align-items: center;
-    gap: 10px 14px;
-    margin-bottom: 16px;
-    padding: 18px;
+    gap: 6px 10px;
+    margin-bottom: 10px;
+    padding: 12px;
     border: 1px solid #edf0f4;
     border-radius: 10px;
     background: #ffffff;
 }
 
 .budget-item b {
-    font-size: 17px;
+    grid-column: 1 / -1;
+    font-size: 15px;
 }
 
 .budget-item em {
     grid-column: 1 / 3;
     width: fit-content;
-    padding: 2px 9px;
+    padding: 2px 8px;
     border-radius: 999px;
-    font-size: 12px;
+    font-size: 11px;
     font-style: normal;
     font-weight: 700;
 }
@@ -1047,7 +1074,7 @@ small,
 }
 
 .progress {
-    height: 7px;
+    height: 6px;
     overflow: hidden;
     border-radius: 999px;
     background: #e5e7eb;
@@ -1076,23 +1103,21 @@ small,
 .green-budget em { background: #dcfce7; color: #15803d; }
 .green-budget .progress span { background: #00c853; }
 
-@media (max-width: 1180px) {
+
+
+@media (min-width: 481px) {
     .sidebar {
-        position: static;
-        width: auto;
-        border-left: 0;
-        border-bottom: 1px solid #edf0f4;
+        padding: 18px;
     }
 
     .sidebar-nav {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .quick-menu {
         display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        gap: 12px;
-        margin-top: 24px;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 10px;
     }
 
     .quick-menu h2 {
@@ -1102,96 +1127,1062 @@ small,
 
     .quick-menu button {
         margin-bottom: 0;
-        padding: 0;
-        justify-content: center;
     }
 
     .dashboard {
-        margin: 0;
+        padding: 10px;
+    }
+
+    .topbar {
+        flex-direction: row;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    .top-brand {
+        text-align: right;
+    }
+
+    .top-tools {
+        flex-direction: row;
+    }
+
+    .stats-layout {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .budget-total {
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .activity {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .activity em {
+        grid-column: auto;
+    }
+
+    .account-row {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .account-row b {
+        grid-column: auto;
+    }
+
+    .budget-item {
+        grid-template-columns: auto 1fr auto;
+    }
+
+    .budget-item b {
+        grid-column: auto;
+    }
+
+    .stat-panel strong {
+        font-size: 26px;
+    }
+}
+
+
+
+
+@media (min-width: 768px) {
+    .sidebar {
+        padding: 20px 24px;
+    }
+
+    .sidebar-nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .quick-menu {
+        grid-template-columns: repeat(4, 1fr);
+    }
+
+    .brand-logo {
+        width: 50px;
+        height: 50px;
+    }
+
+    .brand-logo img {
+        width: 24px;
+        height: 24px;
+    }
+
+    .sidebar-brand h1,
+    .top-brand h2 {
+        font-size: 28px;
+    }
+
+    .sidebar-brand p,
+    .top-brand p {
+        font-size: 12px;
+    }
+
+    .dashboard {
         padding: 16px;
+    }
+
+    .topbar {
+        margin-bottom: 24px;
+    }
+
+    .panel {
+        padding: 20px;
+        border-radius: 12px;
+    }
+
+    .panel-header {
+        margin-bottom: 20px;
+    }
+
+    .panel-header h2 {
+        font-size: 17px;
+    }
+
+    .panel-header a,
+    .center-link {
+        font-size: 13px;
+    }
+
+    .stats-layout {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 16px;
+        margin-bottom: 24px;
+    }
+
+    .stat-panel {
+        padding: 26px 28px;
+        min-height: 140px;
+    }
+
+    .stat-panel span {
+        font-size: 13px;
+    }
+
+    .stat-panel strong {
+        font-size: 30px;
+        margin-top: 10px;
+    }
+
+    .stat-panel em {
+        font-size: 13px;
+        margin-top: 8px;
+    }
+
+    .stat-icon {
+        width: 26px;
+        height: 26px;
+        top: 24px;
+        left: 24px;
     }
 
     .top-layout,
     .bottom-layout {
-        grid-template-columns: 1fr;
-    }
-}
-
-@media (max-width: 700px) {
-    .dashboard {
-        margin: 0;
-        padding: 8px;
+        gap: 14px;
     }
 
-    .panel {
-        padding: 16px;
-        border-radius: 10px;
+    .top-layout {
+        margin-bottom: 14px;
     }
 
-    .sidebar-nav,
-    .quick-menu,
-    .stats-layout {
-        grid-template-columns: 1fr;
+    .right-stack,
+    .middle-stack {
+        gap: 14px;
     }
 
-    .sidebar-brand,
-    .top-brand,
-    .topbar,
-    .top-tools {
-        align-items: stretch;
-        flex-direction: column;
+    .transaction-name strong,
+    .account-row strong,
+    .budget-item strong,
+    .activity strong {
+        font-size: 13px;
     }
 
-    .topbar {
-        gap: 18px;
-        min-height: 0;
-        margin-bottom: 18px;
+    small,
+    .activity p,
+    .bill-card small,
+    .bill-card em,
+    .account-row small,
+    .budget-item small,
+    .budget-total span,
+    .budget-total p,
+    .bank-card p,
+    .bank-card small {
+        font-size: 12px;
     }
 
-    .top-brand {
-        align-items: center;
-        text-align: center;
+    .avatar,
+    .round-icon {
+        width: 38px;
+        height: 38px;
     }
 
-    .online {
-        margin-right: 0;
-        text-align: center;
+    .round-icon img {
+        width: 16px;
+        height: 16px;
     }
 
-    .stats-layout {
-        gap: 12px;
-        margin-bottom: 18px;
+    .pill,
+    .status {
+        font-size: 11px;
+        padding: 3px 10px;
     }
 
-    .stat-panel {
-        min-height: 0;
+    .amount {
+        font-size: 13px;
     }
 
-    .panel-header {
-        margin-bottom: 16px;
+    .table-row {
+        min-height: 66px;
+        font-size: 13px;
     }
 
-    .bill-grid,
-    .budget-total {
-        grid-template-columns: 1fr;
+    .table-head {
+        font-size: 12px;
     }
 
-    .activity,
-    .account-row,
-    .budget-item {
-        grid-template-columns: auto 1fr;
+    .total-bills strong {
+        font-size: 26px;
     }
 
-    .account-row b,
-    .budget-item b {
-        grid-column: 1 / -1;
+    .total-bills span {
+        font-size: 12px;
+    }
+
+    .bill-card {
+        min-height: 110px;
+    }
+
+    .bill-card .round-icon {
+        width: 30px;
+        height: 30px;
+    }
+
+    .bill-card strong {
+        font-size: 15px;
+    }
+
+    .payment-panel {
+        grid-template-rows: auto 178px 178px 178px;
+    }
+
+    .flip-card {
+        height: 178px;
     }
 
     .bank-card {
         padding: 22px;
     }
 
+    .bank-card strong {
+        font-size: 17px;
+        margin: 34px 0 22px;
+    }
+
+    .bank-card b {
+        font-size: 12px;
+    }
+
+    .chart-panel {
+        min-height: 280px;
+    }
+
     .bar-chart {
-        padding-inline: 0;
+        height: 180px;
+        padding: 30px 16px 12px;
+    }
+
+    .bar-chart b {
+        width: 14px;
+    }
+
+    .bar-chart div {
+        gap: 8px;
+    }
+
+    .bar-chart span {
+        font-size: 11px;
+    }
+
+    .budget-total strong {
+        font-size: 20px;
+    }
+
+    .budget-total {
+        padding: 16px;
+    }
+
+    .account-row {
+        padding: 14px 12px;
+        gap: 10px;
+    }
+
+    .account-row b {
+        font-size: 15px;
+    }
+
+    .budget-item {
+        gap: 8px 12px;
+        padding: 14px;
+    }
+
+    .budget-item b {
+        font-size: 16px;
+    }
+
+    .progress {
+        height: 7px;
+    }
+
+    .activities-panel {
+        min-height: 300px;
+    }
+
+    .activity {
+        gap: 10px;
+        padding: 14px;
+    }
+
+    .online {
+        padding: 7px 14px;
+        font-size: 13px;
+    }
+
+    .user-pill img {
+        width: 38px;
+        height: 38px;
+    }
+
+    .user-pill strong {
+        font-size: 13px;
+    }
+
+    .tool-button {
+        width: 40px;
+        height: 40px;
+    }
+
+    .tool-button img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .quick {
+        width: 38px;
+        height: 38px;
+    }
+
+    .quick img {
+        width: 17px;
+        height: 17px;
+    }
+}
+
+
+
+
+@media (min-width: 1024px) {
+    .sidebar-nav {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .top-layout {
+        direction: ltr;
+        grid-template-columns: 2fr 1fr;
+    }
+
+    .top-layout > * {
+        direction: rtl;
+    }
+
+    .bottom-layout {
+        direction: ltr;
+        grid-template-columns: 1fr 1fr;
+    }
+
+    .bottom-layout > * {
+        direction: rtl;
+    }
+
+    .stat-panel {
+        min-height: 150px;
+        padding: 28px 30px;
+    }
+
+    .stat-panel strong {
+        font-size: 32px;
+    }
+
+    .stat-icon {
+        width: 28px;
+        height: 28px;
+        top: 24px;
+        left: 26px;
+    }
+
+    .panel {
+        padding: 22px;
+        border-radius: 14px;
+    }
+
+    .panel-header h2 {
+        font-size: 18px;
+    }
+
+    .panel-header {
+        margin-bottom: 22px;
+        gap: 12px;
+    }
+
+    .panel-header a,
+    .center-link {
+        font-size: 14px;
+    }
+
+    .payment-panel {
+        grid-template-rows: auto 186px 186px 186px;
+    }
+
+    .flip-card {
+        height: 186px;
+    }
+
+    .bank-card {
+        padding: 26px;
+    }
+
+    .bank-card strong {
+        font-size: 19px;
+        margin: 38px 0 24px;
+    }
+
+    .bank-card b {
+        font-size: 13px;
+    }
+
+    .bank-card p {
+        left: 26px;
+    }
+
+    .bank-card small {
+        right: 26px;
+    }
+
+    .bank-card p,
+    .bank-card small {
+        bottom: 24px;
+    }
+
+    .card-magnetic-strip {
+        top: 22px;
+        height: 40px;
+    }
+
+    .card-signature-area {
+        top: 82px;
+        left: 26px;
+        right: 26px;
+        height: 36px;
+        padding: 6px 14px;
+    }
+
+    .card-signature-text {
+        font-size: 9px;
+    }
+
+    .card-last-digits {
+        font-size: 12px;
+    }
+
+    .card-cvv-area {
+        top: 132px;
+        right: 26px;
+        gap: 8px;
+        padding: 5px 14px;
+    }
+
+    .card-cvv-area span {
+        font-size: 12px;
+    }
+
+    .card-cvv-number {
+        font-size: 16px !important;
+    }
+
+    .card-back-logo {
+        bottom: 16px;
+        left: 26px;
+        width: 38px;
+        height: 26px;
+    }
+
+    .main-label {
+        padding: 7px 14px;
+        font-size: 11px;
+    }
+
+    .card-logo {
+        top: 40px;
+        right: 26px;
+        width: 36px;
+        height: 24px;
+    }
+
+    .paypal-logo {
+        top: 38px;
+        right: 26px;
+        width: 32px;
+    }
+
+    .bank-card i {
+        top: 26px;
+        left: 26px;
+        width: 46px;
+        height: 30px;
+    }
+
+    .chart-panel {
+        min-height: 310px;
+    }
+
+    .bar-chart {
+        height: 200px;
+        padding: 34px 24px 12px;
+    }
+
+    .bar-chart b {
+        width: 16px;
+    }
+
+    .bar-chart div {
+        gap: 10px;
+        padding-bottom: 28px;
+    }
+
+    .bar-chart span {
+        font-size: 12px;
+    }
+
+    .total-bills strong {
+        font-size: 28px;
+    }
+
+    .total-bills span {
+        font-size: 13px;
+    }
+
+    .bill-card {
+        min-height: 120px;
+        padding: 13px 10px;
+    }
+
+    .bill-card .round-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bill-card strong {
+        font-size: 16px;
+    }
+
+    .budget-total strong {
+        font-size: 22px;
+    }
+
+    .activities-panel {
+        min-height: 340px;
+    }
+
+    .table-row {
+        min-height: 70px;
+        font-size: 14px;
+        min-width: 780px;
+    }
+
+    .table-head {
+        min-height: 38px;
+        font-size: 13px;
+    }
+
+    .transaction-name strong,
+    .account-row strong,
+    .budget-item strong,
+    .activity strong {
+        font-size: 14px;
+    }
+
+    .avatar,
+    .round-icon {
+        width: 40px;
+        height: 40px;
+    }
+
+    .round-icon img {
+        width: 17px;
+        height: 17px;
+    }
+
+    .pill,
+    .status {
+        font-size: 12px;
+        padding: 3px 11px;
+    }
+
+    .amount {
+        font-size: 14px;
+    }
+
+    .account-row {
+        padding: 16px 14px;
+        gap: 12px;
+        margin-bottom: 14px;
+    }
+
+    .account-row b {
+        font-size: 16px;
+    }
+
+    .budget-item {
+        gap: 10px 14px;
+        margin-bottom: 14px;
+        padding: 16px;
+    }
+
+    .budget-item b {
+        font-size: 17px;
+    }
+
+    .budget-item em {
+        font-size: 12px;
+    }
+
+    .budget-total {
+        padding: 18px;
+        margin-bottom: 22px;
+        gap: 8px 16px;
+    }
+
+    .budget-total strong {
+        font-size: 24px;
+    }
+
+    .inline-icon {
+        width: 12px;
+        height: 12px;
+        margin-right: 4px;
+    }
+}
+
+
+
+
+@media (min-width: 1280px) {
+   
+    .sidebar {
+        position: fixed;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        width: 236px;
+        padding: 20px 20px 28px;
+        border-left: 1px solid #edf0f4;
+        border-bottom: 0;
+        overflow-y: auto;
+    }
+
+    .sidebar-nav {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .sidebar-nav a {
+        gap: 14px;
+        height: 50px;
+        padding: 0 18px;
+    }
+
+    .brand-logo {
+        width: 56px;
+        height: 56px;
+        border-radius: 16px;
+    }
+
+    .brand-logo img {
+        width: 27px;
+        height: 27px;
+    }
+
+    .sidebar-brand h1,
+    .top-brand h2 {
+        font-size: 31px;
+    }
+
+    .sidebar-brand p,
+    .top-brand p {
+        font-size: 13px;
+    }
+
+    .sidebar-brand {
+        margin-bottom: 34px;
+    }
+
+    .quick-menu {
+        display: block;
+        margin-top: 44px;
+    }
+
+    .quick-menu h2 {
+        margin: 0 0 22px;
+    }
+
+    .quick-menu button {
+        gap: 14px;
+        margin-bottom: 36px;
+        padding: 0 22px;
+        justify-content: flex-start;
+    }
+
+    .quick {
+        width: 40px;
+        height: 40px;
+    }
+
+    .quick img {
+        width: 18px;
+        height: 18px;
+    }
+
+  
+    .dashboard {
+        margin: 0 270px 0 34px;
+        padding: 22px 0 16px;
+    }
+
+    .topbar {
+        min-height: 116px;
+        margin-bottom: 38px;
+    }
+
+    .online {
+        margin-right: 38px;
+        padding: 8px 15px;
+        font-size: 13px;
+    }
+
+    .user-pill {
+        min-width: 152px;
+    }
+
+    .user-pill img {
+        width: 41px;
+        height: 41px;
+    }
+
+    .user-pill strong {
+        font-size: 13px;
+    }
+
+  
+    .stats-layout {
+        gap: 24px;
+        margin-bottom: 38px;
+    }
+
+    .stat-panel {
+        min-height: 162px;
+        padding: 30px 32px;
+    }
+
+    .stat-panel span {
+        font-size: 14px;
+    }
+
+    .stat-panel strong {
+        font-size: 34px;
+        margin-top: 12px;
+    }
+
+    .stat-panel em {
+        margin-top: 10px;
+        font-size: 14px;
+    }
+
+    .stat-icon {
+        top: 26px;
+        left: 28px;
+        width: 28px;
+        height: 28px;
+    }
+
+ 
+    .top-layout {
+        grid-template-columns: 2fr 0.98fr;
+        margin-bottom: 16px;
+    }
+
+    .bottom-layout {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
+
+    .top-layout,
+    .bottom-layout {
+        gap: 16px;
+    }
+
+    .right-stack,
+    .middle-stack {
+        gap: 16px;
+    }
+
+    
+    .panel {
+        padding: 24px;
+        border-radius: 14px;
+    }
+
+    .panel-header {
+        gap: 14px;
+        margin-bottom: 24px;
+    }
+
+    .panel-header h2 {
+        font-size: 18px;
+    }
+
+  
+    .table-row {
+        grid-template-columns: minmax(230px, 1.8fr) 1fr 1.1fr 0.8fr 0.9fr;
+        min-width: 840px;
+        min-height: 73px;
+        font-size: 14px;
+    }
+
+    .table-head {
+        min-height: 40px;
+        font-size: 13px;
+    }
+
+    
+    .activities-panel {
+        min-height: 363px;
+    }
+
+    .activity {
+        padding: 16px;
+        gap: 12px;
+        margin-bottom: 12px;
+    }
+
+   
+    .total-bills strong {
+        font-size: 30px;
+    }
+
+    .total-bills span {
+        font-size: 13px;
+    }
+
+    .bill-card {
+        min-height: 120px;
+        padding: 13px 10px;
+    }
+
+    .bill-card .round-icon {
+        width: 32px;
+        height: 32px;
+    }
+
+    .bill-card strong {
+        font-size: 16px;
+    }
+
+    .payment-panel {
+        grid-template-rows: auto 192px 192px 192px;
+    }
+
+    .flip-card {
+        height: 192px;
+    }
+
+    .bank-card {
+        padding: 28px;
+    }
+
+    .bank-card strong {
+        font-size: 20px;
+        margin: 40px 0 26px;
+    }
+
+    .bank-card b {
+        font-size: 13px;
+    }
+
+    .bank-card p {
+        left: 28px;
+    }
+
+    .bank-card small {
+        right: 28px;
+    }
+
+    .bank-card p,
+    .bank-card small {
+        bottom: 26px;
+    }
+
+    .card-magnetic-strip {
+        top: 22px;
+        height: 42px;
+    }
+
+    .card-signature-area {
+        top: 84px;
+        left: 28px;
+        right: 28px;
+        height: 38px;
+        padding: 6px 14px;
+    }
+
+    .card-signature-text {
+        font-size: 10px;
+    }
+
+    .card-last-digits {
+        font-size: 13px;
+    }
+
+    .card-cvv-area {
+        top: 136px;
+        right: 28px;
+        gap: 10px;
+        padding: 6px 16px;
+    }
+
+    .card-cvv-area span {
+        font-size: 13px;
+    }
+
+    .card-cvv-number {
+        font-size: 18px !important;
+    }
+
+    .card-back-logo {
+        bottom: 18px;
+        left: 28px;
+        width: 40px;
+        height: 28px;
+        padding: 4px;
+    }
+
+    .main-label {
+        top: 11px;
+        right: 13px;
+        padding: 7px 15px;
+        font-size: 12px;
+    }
+
+    .card-logo {
+        top: 42px;
+        right: 28px;
+        width: 38px;
+        height: 26px;
+    }
+
+    .paypal-logo {
+        top: 40px;
+        right: 28px;
+        width: 34px;
+    }
+
+    .bank-card i {
+        top: 28px;
+        left: 28px;
+        width: 48px;
+        height: 32px;
+        border-radius: 7px;
+    }
+
+    .bank-card i::after {
+        inset: 8px 11px;
+    }
+
+    
+    .chart-panel {
+        min-height: 320px;
+    }
+
+    .chart-legend {
+        gap: 12px;
+        font-size: 12px;
+    }
+
+    .bar-chart {
+        height: 200px;
+        padding: 36px 28px 12px;
+    }
+
+    .bar-chart div {
+        gap: 12px;
+        padding-bottom: 30px;
+    }
+
+    .bar-chart b {
+        width: 16px;
+    }
+
+    .bar-chart span {
+        font-size: 12px;
+    }
+
+    .green-box,
+    .red-box {
+        width: 12px;
+        height: 12px;
+    }
+
+   
+    .account-row {
+        gap: 12px;
+        margin-bottom: 16px;
+        padding: 18px 16px;
+    }
+
+    .account-row b {
+        font-size: 16px;
+    }
+
+   
+    .budget-total {
+        gap: 8px 16px;
+        margin-bottom: 24px;
+        padding: 18px;
+    }
+
+    .budget-total strong {
+        font-size: 24px;
+    }
+
+    .budget-total em {
+        font-size: 12px;
+    }
+
+    .budget-item {
+        gap: 10px 14px;
+        margin-bottom: 16px;
+        padding: 18px;
+    }
+
+    .budget-item b {
+        font-size: 17px;
+    }
+
+    .budget-item em {
+        font-size: 12px;
+    }
+
+    .center-link {
+        margin-top: 16px;
+        padding-top: 20px;
     }
 }
